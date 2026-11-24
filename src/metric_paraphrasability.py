@@ -96,6 +96,7 @@ def _gemini_paraphrase(
         )
     elif mode.startswith("section_"):
         which = mode.split("_", 1)[1]
+        readable_part = {"beginning": "the beginning", "end": "the end", "random": "a random part"}[which]
         constraint = (
             f"For each fraction f, only paraphrase a contiguous section from {readable_part} of the text, "
             "where the length of the section is f times the total length. Leave the rest of the text unchanged."
